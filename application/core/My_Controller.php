@@ -16,6 +16,9 @@
 					'url'=>base_url(),
 					'dir'=>realpath(FCPATH)
 				),
+				'root'=>array(
+					'url'=>end(explode($_SERVER['SERVER_NAME'],base_url()))
+				),
 				'theme'=>array(
 					'url'=>base_url().str_replace('cache','',$smarty['cache_dir']),
 					'dir'=>realpath(FCPATH.str_replace('cache','',$smarty['cache_dir']))

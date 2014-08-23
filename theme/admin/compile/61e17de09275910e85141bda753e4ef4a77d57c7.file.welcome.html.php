@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-08-23 03:39:11
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-23 08:40:35
          compiled from "D:\Users\xkc\Downloads\PHPnow-1.5.6.4237493736\htdocs\CI\theme\admin\template\welcome.html" */ ?>
 <?php /*%%SmartyHeaderCode:54253f8055486a8d4-78216699%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '61e17de09275910e85141bda753e4ef4a77d57c7' => 
     array (
       0 => 'D:\\Users\\xkc\\Downloads\\PHPnow-1.5.6.4237493736\\htdocs\\CI\\theme\\admin\\template\\welcome.html',
-      1 => 1408765146,
+      1 => 1408783234,
       2 => 'file',
     ),
   ),
@@ -403,7 +403,8 @@ assets/img/avatars/sunny.png" alt="me" class="online" />
 
 				<ul>
 					<li class="">
-						<a href="ajax/dashboard.html" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>
+						<a href="<?php echo $_smarty_tpl->tpl_vars['app']->value['root']['url'];?>
+admin/panel" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>
 					</li>
 					<li>
 						<a href="ajax/inbox.html"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">Inbox</span><span class="badge pull-right inbox-badge">14</span></a>
