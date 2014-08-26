@@ -8,13 +8,13 @@ PGCMS
 		action			动作
 		icon			图标
 		parent			父节点ID
-		status			导航（1||0=>是||否）
+		status			导航/*1||0=>是||否*/
 		sort			排序			
-权限系统
+权限组
 	表	group
 		id				主键
 		name			组名称
-		menu			栏目ID集合（serialize序列化）
+		menu			栏目ID集合/*serialize序列化*/
 		time			创建时间
 用户系统
 	表	user
@@ -22,22 +22,22 @@ PGCMS
 		name			名称
 		alias			别名
 		password		密码
-		group			权限ID（JSON存储ID集合）
-		random			随机串（用于MD5加密）
-		attribute		属性（serialize序列化）
+		group			权限ID/*serialize序列化*/
+		random			随机串/*用于MD5加密*/
+		attribute		属性/*serialize序列化*/
 		time			创建时间
 系统配置
 	表	config
 		id				主键
 		alias			别名
 		key				键名
-		attribute		属性（serialize序列化）
+		attribute		属性/*serialize序列化*/
 		time			创建时间
 		键	data
-			bak_interval		自动备份时间间隔（默认7天604800000，毫秒为单位）
+			bak_interval		自动备份时间间隔/*默认7天604800000，毫秒为单位*/
 			bak_name			备份文件命名规则
 		键	log
-			delete_interval		自动删除日志时间间隔（默认7天604800000，毫秒为单位）
+			delete_interval		自动删除日志时间间隔/*默认7天604800000，毫秒为单位*/
 主题系统
 	目录	theme/system/default/theme.xml
 			name			名称
@@ -62,20 +62,20 @@ PGCMS
 		title			标题
 		intro			简介
 		picture			图片
-		module			模块名称（article||video…）
+		module			模块名称/*article||video…*/
 		join_id			关联ID
 		soft			排序
 		time			创建时间
 分类管理
 	表	category
 		id				主键
-		name			名称
+		title			标题
 		intro			简介
 		picture			图片
-		category		列表模板
-		single			详细模板
+		a_tpl			列表模板
+		b_tpl			详细模板
 		parent			父节点
-		attribute		属性（serialize序列化）
+		attribute		属性/*serialize序列化*/
 		user			用户ID
 		sort			排序
 文章系统
@@ -85,7 +85,7 @@ PGCMS
 		picture			图片
 		category		分类ID
 		intro			简介
-		content			内 容
+		content			内容
 		photo			相册ID
 		click			点击量
 		user			用户ID
@@ -102,7 +102,7 @@ PGCMS
 		duration		时长
 		click			点击量
 		user			用户ID
-		file			文件地址（需处理本地或远程）
+		file			文件地址/*需处理本地或远程*/
 		sort			排序
 		time			创建时间
 单页系统
@@ -121,8 +121,9 @@ PGCMS
 		id				主键
 		title			标题
 		intro			简介
-		file			文件地址
+		file			文件地址集合/*serialize序列化*/
 		style			样式
+		click			点击量
 		sort			排序
 		user			用户ID
 		time			创建时间
@@ -148,7 +149,7 @@ PGCMS
 		name			留言者
 		parent			父节点
 		content			简介
-		module			模块名称（article||video…）
+		module			模块名称/*article||video…*/
 		a_click			顶
 		b_click			踩
 		join_id			关联ID
@@ -159,20 +160,19 @@ PGCMS
 		title			标题
 		intro			简介
 		content			内容
-		type			类型（0||1=>单选||多选）
+		type			类型/*0||1=>单选||多选*/
 		vote_item		投票选项ID
-		robot			投票验证（0||1=>不验证||验证IP）
-		interval		同IP允许投票时间间隔（默认一天86400000，毫秒为单位）
+		robot			投票验证/*0||1=>不验证||验证IP*/
+		interval		同IP允许投票时间间隔/*默认一天86400000，毫秒为单位*/
 		user			用户ID
 		time			创建时间
-		表	vote_item（投票选项）
-			id			主键
+		表	vote_item/*投票选项*/
 			vote		投票ID
 			title		标题
 			sort		排序
 			time		创建时间
-			表	vote_ip（IP记录）
-				vote_item		选项ID
+			表	vote_ip/*IP记录*/
+				vote_item		投票选项ID
 				ip				IP
 				time			创建时间
 地图标注
@@ -191,6 +191,7 @@ PGCMS
 		url				链接
 		user			用户ID
 		sort			排序
+		time 			创建时间
 下载中心
 	表	download
 		id				主键
@@ -202,19 +203,21 @@ PGCMS
 		size			大小
 		a_click			点击量
 		b_click			下载量
+		file			文件地址
 		user			用户ID
 		sort			排序
 		time			创建时间
 数据备份
 	表	data
 		id				主键
-		file			文件名
+		file			文件地址
 		user			用户ID
 		time			创建时间
 系统日志
 	表	log
+		id 				主键
 		event			事件
 		intro			事件描述
-		sql				SQL语言
+		sql				SQL语句
 		user			用户ID
 		time			创建时间
