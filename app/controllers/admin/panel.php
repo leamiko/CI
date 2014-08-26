@@ -5,6 +5,7 @@ class Panel extends Admin_Controller {
 		parent::__construct();
 	}
 	public function index(){
-		$this->smarty->display('dummy.html');
+		$this->smarty->display('ajax/form-elements.html');
+		//$this->smarty->display('dummy.html');
 	}
 }

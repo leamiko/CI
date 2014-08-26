@@ -1,4 +1,29 @@
-		<div class="row">
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-26 19:19:50
+         compiled from "D:\soft\wamp\www\CI\theme\admin\template\ajax\add_model.html" */ ?>
+<?php /*%%SmartyHeaderCode:308953fc9773203a01-65953988%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '402da89027745882deac5aa6a00f740e302d970a' => 
+    array (
+      0 => 'D:\\soft\\wamp\\www\\CI\\theme\\admin\\template\\ajax\\add_model.html',
+      1 => 1409073586,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '308953fc9773203a01-65953988',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_53fc977328c584_12975063',
+  'variables' => 
+  array (
+    'app' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_53fc977328c584_12975063')) {function content_53fc977328c584_12975063($_smarty_tpl) {?>		<div class="row">
 			<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
 				<h1 class="page-title txt-color-blueDark">
 					<i class="fa fa-edit fa-fw "></i> 
@@ -134,7 +159,7 @@
 
 					<!-- widget content -->
 					<div class="widget-body no-padding">
-						{literal}
+						
 						<form action="" class="smart-form validate" novalidate="novalidate">
 							<footer>
 								<button class="btn btn-default" type="button">
@@ -212,7 +237,7 @@
 								</button>
 							</footer>
 						</form>
-						{/literal}
+						
 					</div>
 					<!-- end widget content -->
 
@@ -228,7 +253,8 @@
 
 			pageSetUp();
 
-			loadScript("{$app.theme.url}assets/js/plugin/jquery-form/jquery-form.min.js", runFormValidation);
+			loadScript("<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/js/plugin/jquery-form/jquery-form.min.js", runFormValidation);
 
 
 			// Registration validation script
@@ -298,4 +324,4 @@
 					}
 				});
 			});
-		</script>
+		</script><?php }} ?>

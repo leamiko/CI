@@ -1,4 +1,29 @@
-
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-26 18:37:46
+         compiled from "D:\soft\wamp\www\CI\theme\admin\template\welcome.html" */ ?>
+<?php /*%%SmartyHeaderCode:658753fc976a6b2d88-89843030%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '6b08f7ad4273ec3ae72f43acff9e40c826658507' => 
+    array (
+      0 => 'D:\\soft\\wamp\\www\\CI\\theme\\admin\\template\\welcome.html',
+      1 => 1409071063,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '658753fc976a6b2d88-89843030',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_53fc976aac1e80_59435164',
+  'variables' => 
+  array (
+    'app' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_53fc976aac1e80_59435164')) {function content_53fc976aac1e80_59435164($_smarty_tpl) {?>
 <!DOCTYPE html>
 <html lang="en-us">	
 	<head>
@@ -11,44 +36,60 @@
 		
 		<!-- #CSS Links -->
 		<!-- Basic Styles -->
-		<link rel="stylesheet" type="text/css" media="screen" href="{$app.theme.url}assets/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="{$app.theme.url}assets/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/css/font-awesome.min.css">
 
 		<!-- SmartAdmin Styles : Please note (smartadmin-production.css) was created using LESS variables -->
-		<link rel="stylesheet" type="text/css" media="screen" href="{$app.theme.url}assets/css/smartadmin-production.min.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="{$app.theme.url}assets/css/smartadmin-skins.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/css/smartadmin-production.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/css/smartadmin-skins.min.css">
 
 		<!-- SmartAdmin RTL Support is under construction
 			 This RTL CSS will be released in version 1.5
-		<link rel="stylesheet" type="text/css" media="screen" href="{$app.theme.url}assets/css/smartadmin-rtl.min.css"> -->
+		<link rel="stylesheet" type="text/css" media="screen" href="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/css/smartadmin-rtl.min.css"> -->
 
 		<!-- We recommend you use "your_style.css" to override SmartAdmin
 		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
-		<link rel="stylesheet" type="text/css" media="screen" href="{$app.theme.url}assets/css/your_style.css"> -->
+		<link rel="stylesheet" type="text/css" media="screen" href="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/css/your_style.css"> -->
 
 		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
-		<link rel="stylesheet" type="text/css" media="screen" href="{$app.theme.url}assets/css/demo.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/css/demo.min.css">
 
 		<!-- #FAVICONS -->
-		<link rel="shortcut icon" href="{$app.theme.url}assets/img/favicon/favicon.ico" type="image/x-icon">
-		<link rel="icon" href="{$app.theme.url}assets/img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/img/favicon/favicon.ico" type="image/x-icon">
 
 		<!-- #APP SCREEN / ICONS -->
 		<!-- Specifying a Webpage Icon for Web Clip 
 			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
-		<link rel="apple-touch-icon" href="{$app.theme.url}assets/img/splash/sptouch-icon-iphone.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="{$app.theme.url}assets/img/splash/touch-icon-ipad.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="{$app.theme.url}assets/img/splash/touch-icon-iphone-retina.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="{$app.theme.url}assets/img/splash/touch-icon-ipad-retina.png">
+		<link rel="apple-touch-icon" href="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/img/splash/sptouch-icon-iphone.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/img/splash/touch-icon-ipad.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/img/splash/touch-icon-iphone-retina.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/img/splash/touch-icon-ipad-retina.png">
 		
 		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		
 		<!-- Startup image for web apps -->
-		<link rel="apple-touch-startup-image" href="{$app.theme.url}assets/img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
-		<link rel="apple-touch-startup-image" href="{$app.theme.url}assets/img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
-		<link rel="apple-touch-startup-image" href="{$app.theme.url}assets/img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+		<link rel="apple-touch-startup-image" href="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+		<link rel="apple-touch-startup-image" href="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+		<link rel="apple-touch-startup-image" href="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/img/splash/iphone.png" media="screen and (max-device-width: 320px)">
 
 	</head>
 
@@ -101,7 +142,8 @@
 			<div id="logo-group">
 
 				<!-- PLACE YOUR LOGO HERE -->
-				<span id="logo"> <img src="{$app.theme.url}assets/img/logo.png" alt="SmartAdmin"> </span>
+				<span id="logo"> <img src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/img/logo.png" alt="SmartAdmin"> </span>
 				<!-- END LOGO PLACEHOLDER -->
 
 				<!-- Note: The activity badge color changes when clicked and resets the number to 0
@@ -190,7 +232,8 @@
 				<ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
 					<li class="">
 						<a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown"> 
-							<img src="{$app.theme.url}assets/img/avatars/sunny.png" alt="John Doe" class="online" />  
+							<img src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/img/avatars/sunny.png" alt="John Doe" class="online" />  
 						</a>
 						<ul class="dropdown-menu pull-right">
 							<li>
@@ -268,37 +311,48 @@
 				<!-- multiple lang dropdown : find all flags in the flags page -->
 				<ul class="header-dropdown-list hidden-xs">
 					<li>
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="{$app.theme.url}assets/img/blank.gif" class="flag flag-us" alt="United States"> <span> US</span> <i class="fa fa-angle-down"></i> </a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/img/blank.gif" class="flag flag-us" alt="United States"> <span> US</span> <i class="fa fa-angle-down"></i> </a>
 						<ul class="dropdown-menu pull-right">
 							<li class="active">
-								<a href="javascript:void(0);"><img src="{$app.theme.url}assets/img/blank.gif" class="flag flag-us" alt="United States"> English (US)</a>
+								<a href="javascript:void(0);"><img src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/img/blank.gif" class="flag flag-us" alt="United States"> English (US)</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="{$app.theme.url}assets/img/blank.gif" class="flag flag-fr" alt="France"> Français</a>
+								<a href="javascript:void(0);"><img src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/img/blank.gif" class="flag flag-fr" alt="France"> Français</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="{$app.theme.url}assets/img/blank.gif" class="flag flag-es" alt="Spanish"> Español</a>
+								<a href="javascript:void(0);"><img src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/img/blank.gif" class="flag flag-es" alt="Spanish"> Español</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="{$app.theme.url}assets/img/blank.gif" class="flag flag-de" alt="German"> Deutsch</a>
+								<a href="javascript:void(0);"><img src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/img/blank.gif" class="flag flag-de" alt="German"> Deutsch</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="{$app.theme.url}assets/img/blank.gif" class="flag flag-jp" alt="Japan"> 日本語</a>
+								<a href="javascript:void(0);"><img src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/img/blank.gif" class="flag flag-jp" alt="Japan"> 日本語</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="{$app.theme.url}assets/img/blank.gif" class="flag flag-cn" alt="China"> 中文</a>
+								<a href="javascript:void(0);"><img src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/img/blank.gif" class="flag flag-cn" alt="China"> 中文</a>
 							</li>	
 							<li>
-								<a href="javascript:void(0);"><img src="{$app.theme.url}assets/img/blank.gif" class="flag flag-it" alt="Italy"> Italiano</a>
+								<a href="javascript:void(0);"><img src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/img/blank.gif" class="flag flag-it" alt="Italy"> Italiano</a>
 							</li>	
 							<li>
-								<a href="javascript:void(0);"><img src="{$app.theme.url}assets/img/blank.gif" class="flag flag-pt" alt="Portugal"> Portugal</a>
+								<a href="javascript:void(0);"><img src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/img/blank.gif" class="flag flag-pt" alt="Portugal"> Portugal</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="{$app.theme.url}assets/img/blank.gif" class="flag flag-ru" alt="Russia"> Русский язык</a>
+								<a href="javascript:void(0);"><img src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/img/blank.gif" class="flag flag-ru" alt="Russia"> Русский язык</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);"><img src="{$app.theme.url}assets/img/blank.gif" class="flag flag-kp" alt="Korea"> 한국어</a>
+								<a href="javascript:void(0);"><img src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/img/blank.gif" class="flag flag-kp" alt="Korea"> 한국어</a>
 							</li>						
 							
 						</ul>
@@ -322,7 +376,8 @@
 				<span> <!-- User image size is adjusted inside CSS, it should stay as is --> 
 					
 					<a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
-						<img src="{$app.theme.url}assets/img/avatars/sunny.png" alt="me" class="online" /> 
+						<img src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/img/avatars/sunny.png" alt="me" class="online" /> 
 						<span>
 							john.doe 
 						</span>
@@ -348,7 +403,8 @@
 
 				<ul>
 					<li class="">
-						<a href="{$app.root.url}admin/panel" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>
+						<a href="<?php echo $_smarty_tpl->tpl_vars['app']->value['root']['url'];?>
+admin/panel" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>
 					</li>
 					<li>
 						<a href="ajax/inbox.html"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">Inbox</span><span class="badge pull-right inbox-badge">14</span></a>
@@ -709,67 +765,87 @@
 		<!--================================================== -->
 
 		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)
-		<script data-pace-options='{ "restartOnRequestAfter": true }' src="{$app.theme.url}assets/js/plugin/pace/pace.min.js"></script>-->
+		<script data-pace-options='{ "restartOnRequestAfter": true }' src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/js/plugin/pace/pace.min.js"></script>-->
 
 
 		<!-- #PLUGINS -->
 		<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
-		<script src="{$app.theme.url}assets/js/libs/jquery-2.0.2.min.js"></script>
-		<script src="{$app.theme.url}assets/js/libs/jquery-ui-1.10.3.min.js"></script>
+		<script src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/js/libs/jquery-2.0.2.min.js"></script>
+		<script src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/js/libs/jquery-ui-1.10.3.min.js"></script>
 
 
 		<!-- IMPORTANT: APP CONFIG -->
-		<script src="{$app.theme.url}assets/js/app.config.js"></script>
+		<script src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/js/app.config.js"></script>
 
 		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
-		<script src="{$app.theme.url}assets/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> 
+		<script src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> 
 
 		<!-- BOOTSTRAP JS -->
-		<script src="{$app.theme.url}assets/js/bootstrap/bootstrap.min.js"></script>
+		<script src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/js/bootstrap/bootstrap.min.js"></script>
 
 		<!-- CUSTOM NOTIFICATION -->
-		<script src="{$app.theme.url}assets/js/notification/SmartNotification.min.js"></script>
+		<script src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/js/notification/SmartNotification.min.js"></script>
 
 		<!-- JARVIS WIDGETS -->
-		<script src="{$app.theme.url}assets/js/smartwidgets/jarvis.widget.min.js"></script>
+		<script src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/js/smartwidgets/jarvis.widget.min.js"></script>
 
 		<!-- EASY PIE CHARTS -->
-		<script src="{$app.theme.url}assets/js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+		<script src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
 
 		<!-- SPARKLINES -->
-		<script src="{$app.theme.url}assets/js/plugin/sparkline/jquery.sparkline.min.js"></script>
+		<script src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/js/plugin/sparkline/jquery.sparkline.min.js"></script>
 
 		<!-- JQUERY VALIDATE -->
-		<script src="{$app.theme.url}assets/js/plugin/jquery-validate/jquery.validate.min.js"></script>
+		<script src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/js/plugin/jquery-validate/jquery.validate.min.js"></script>
 
 		<!-- JQUERY MASKED INPUT -->
-		<script src="{$app.theme.url}assets/js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+		<script src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/js/plugin/masked-input/jquery.maskedinput.min.js"></script>
 
 		<!-- JQUERY SELECT2 INPUT -->
-		<script src="{$app.theme.url}assets/js/plugin/select2/select2.min.js"></script>
+		<script src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/js/plugin/select2/select2.min.js"></script>
 
 		<!-- JQUERY UI + Bootstrap Slider -->
-		<script src="{$app.theme.url}assets/js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+		<script src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
 
 		<!-- browser msie issue fix -->
-		<script src="{$app.theme.url}assets/js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+		<script src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
 
 		<!-- FastClick: For mobile devices: you can disable this in app.js -->
-		<script src="{$app.theme.url}assets/js/plugin/fastclick/fastclick.min.js"></script>
+		<script src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/js/plugin/fastclick/fastclick.min.js"></script>
 
 		<!--[if IE 8]>
 			<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
 		<![endif]-->
-		<script src="{$app.theme.url}assets/js/pg.js"></script>
+		<script src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/js/pg.js"></script>
 		<!-- Demo purpose only -->
-		<script src="{$app.theme.url}assets/js/demo.min.js"></script>
+		<script src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/js/demo.min.js"></script>
 
 		<!-- MAIN APP JS FILE -->
-		<script src="{$app.theme.url}assets/js/app.min.js"></script>
+		<script src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/js/app.min.js"></script>
 
 		<!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
 		<!-- Voice command : plugin -->
-		<script src="{$app.theme.url}assets/js/speech/voicecommand.min.js"></script>
+		<script src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/js/speech/voicecommand.min.js"></script>
 
 		<!-- Your GOOGLE ANALYTICS CODE Below -->
 		<script type="text/javascript">
@@ -788,4 +864,4 @@
 
 	</body>
 
-</html>
+</html><?php }} ?>
