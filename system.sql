@@ -1,3 +1,7 @@
+CREATE DATABASE IF NOT EXISTS `pg` default character set utf8 COLLATE utf8_general_ci;
+
+USE `pg`;
+
 CREATE TABLE IF NOT EXISTS `pg_menu` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `name` varchar(100) DEFAULT NULL COMMENT '名称',
