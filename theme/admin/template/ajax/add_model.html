@@ -45,7 +45,7 @@
 					<!-- end widget edit box -->
 
 					<!-- widget content -->
-					<div class="widget-body">
+					<div class="widget-body no-padding">
 						{literal}
 						<form class="smart-form" novalidate="novalidate">
 							
@@ -58,13 +58,16 @@
 								</section>
 								<section>
 									<div class="btn-group">
+										<a class="btn btn-default disabled">
+											所属
+										</a>
 										<a class="btn btn-default" data-target="#myModal" data-toggle="modal">
-											顶级节点
+											主表
 										</a>
 										<input type="hidden" name="parent" value="0">
 									</div>
 									<div class="note">
-										<strong>父节点</strong> 用于关联表,顶级节点不关联任何表
+										<strong>所属</strong> 用于关联表,默认主表不关联任何表
 									</div>
 								</section>
 								<section>
@@ -230,13 +233,13 @@
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
 							&times;
 						</button>
-						<h4 class="modal-title" id="myModalLabel">节点选择</h4>
+						<h4 class="modal-title" id="myModalLabel">关联表选择</h4>
 					</div>
 					<div class="modal-body">
 						<script type="text/javascript">
 							<!--
 							var d = new dTree('d');
-							d.add(0,-1,'顶级节点','javascript:void(0)');
+							d.add(0,-1,'主表','javascript:void(0)');
 							{foreach $array as $row}
 							d.add({$row.id},{$row.parent},'{$row.comment}','javascript:void({$row.id})');
 							{/foreach}
@@ -345,7 +348,7 @@
 									pg.box(opt);
 									if(json.status[0] == 1){
 										setTimeout(function(){
-											window.location = json.jump;
+											window.location = '{$app.host.url}admin#'+json.jump;
 										},opt.timeout);
 									}
 									$(me).attr('disabled',false);

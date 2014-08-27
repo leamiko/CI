@@ -39,7 +39,6 @@ PGCMS
 				password		密码
 				group			权限ID/*serialize序列化*/
 				random			随机串/*用于MD5加密*/
-				attribute		属性/*serialize序列化*/
 				time			创建时间
 		系统配置
 			表	config
@@ -90,7 +89,6 @@ PGCMS
 				a_tpl			列表模板
 				b_tpl			详细模板
 				parent			父节点
-				attribute		属性/*serialize序列化*/
 				user			用户ID
 				sort			排序
 		文章

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-08-26 19:19:50
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-27 22:30:22
          compiled from "D:\soft\wamp\www\CI\theme\admin\template\ajax\add_model.html" */ ?>
 <?php /*%%SmartyHeaderCode:308953fc9773203a01-65953988%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '402da89027745882deac5aa6a00f740e302d970a' => 
     array (
       0 => 'D:\\soft\\wamp\\www\\CI\\theme\\admin\\template\\ajax\\add_model.html',
-      1 => 1409073586,
+      1 => 1409149821,
       2 => 'file',
     ),
   ),
@@ -19,6 +19,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_53fc977328c584_12975063',
   'variables' => 
   array (
+    'array' => 0,
+    'row' => 0,
     'app' => 0,
   ),
   'has_nocache_code' => false,
@@ -70,47 +72,51 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<!-- end widget edit box -->
 
 					<!-- widget content -->
-					<div class="widget-body">
-
+					<div class="widget-body no-padding">
+						
 						<form class="smart-form" novalidate="novalidate">
 							
 							<fieldset>
 								<section>
 									<label class="input">
-										  <input type="checkbox" name="status" class="checkbox" checked="checked" value="0">
+										  <input type="checkbox" name="status" class="checkbox" checked="checked">
 										  <span>自动安装</span>
 									</label>
 								</section>
 								<section>
-									<label class="input">
-										<select name="parent" class="form-control">
-											<option value="0">顶级节点</option>
-										</select>
-									</label>
+									<div class="btn-group">
+										<a class="btn btn-default disabled">
+											所属
+										</a>
+										<a class="btn btn-default" data-target="#myModal" data-toggle="modal">
+											主表
+										</a>
+										<input type="hidden" name="parent" value="0">
+									</div>
 									<div class="note">
-										<strong>父节点</strong> 用于关联表,顶级节点不关联任何表
+										<strong>所属</strong> 用于关联表,默认主表不关联任何表
 									</div>
 								</section>
 								<section>
 									<label class="input">
-										  <input class="form-control" name="table" placeholder="表名:英文命名" type="text">
+										  <input data-rules="{required:true}" name="table" placeholder="表名:英文命名" type="text">
 									</label>
 								</section>
 								<section>
 									<label class="input">
-										  <input class="form-control" name="comment" placeholder="描述:中文命名" type="text">
+										  <input data-rules="{required:true}" name="comment" placeholder="描述:中文命名" type="text">
 									</label>
 								</section>
 							</fieldset>
 							
 							<footer>
-								<button class="btn btn-default" type="button">
+								<button class="btn btn-default" id="next" type="button">
 									<i class="fa fa-mail-forward"></i>
 									下一步
 								</button>
 							</footer>
 						</form>
-
+						
 					</div>
 					<!-- end widget content -->
 
@@ -161,12 +167,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 					<div class="widget-body no-padding">
 						
 						<form action="" class="smart-form validate" novalidate="novalidate">
-							<footer>
-								<button class="btn btn-default" type="button">
-									<i class="fa fa-copy"></i>
-									新增字段
-								</button>
-							</footer>
 							<fieldset>
 								<section>
 									<div class="row" style="display:none;">
@@ -180,7 +180,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 										</section>
 										<section class="col col-3">
 											<label class="input">
-												<input type="text" name="field_comment"  class="ignore" data-rules="{required:true}" placeholder="字段描述">
+												<input type="text" name="field_comment" class="ignore" data-rules="{required:true}" placeholder="字段描述">
 												<b class="tooltip tooltip-top-left">
 													<i class="fa fa-warning txt-color-teal"></i> 
 													字段描述且以中文命名</b> 
@@ -188,7 +188,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 										</section>
 										<section class="col col-2">
 											<label class="select">
-												<select name="field_type">
+												<select name="field_type" class="ignore">
 													<option value="int(11)">INT</option>
 													<option value="varchar(500)">VARCHAR</option>
 													<option value="text">TEXT</option>
@@ -197,7 +197,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 										</section>
 										<section class="col col-2">
 											<label class="input">
-												<input type="text" name="field_default" placeholder="默认值">
+												<input type="text" name="field_default"  class="ignore" placeholder="默认值">
 												<b class="tooltip tooltip-top-left">
 													<i class="fa fa-warning txt-color-teal"></i> 
 													字段默认值</b> 
@@ -205,7 +205,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 										</section>
 										<section class="col col-2">
 											<label class="select">
-												<select name="field_ui">
+												<select name="field_ui" class="ignore">
 													<option value="text">文本框</option>
 													<option value="textarea">多行文本框</option>
 													<option value="radio">单选</option>
@@ -231,9 +231,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 									<i class="fa fa-save"></i>
 									保存设置
 								</button>
-								<button class="btn btn-default" type="button">
+								<button class="btn btn-default" id="prev" type="button">
 									<i class="fa fa-mail-reply"></i>
 									上一步
+								</button>
+								<button class="btn btn-default" id="add" type="button">
+									<i class="fa fa-copy"></i>
+									新增字段
 								</button>
 							</footer>
 						</form>
@@ -248,7 +252,52 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<!-- end widget -->
 
 		</article>
-
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title" id="myModalLabel">关联表选择</h4>
+					</div>
+					<div class="modal-body">
+						<script type="text/javascript">
+							<!--
+							var d = new dTree('d');
+							d.add(0,-1,'主表','javascript:void(0)');
+							<?php  $_smarty_tpl->tpl_vars['row'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['row']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['array']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['row']->key => $_smarty_tpl->tpl_vars['row']->value) {
+$_smarty_tpl->tpl_vars['row']->_loop = true;
+?>
+							d.add(<?php echo $_smarty_tpl->tpl_vars['row']->value['id'];?>
+,<?php echo $_smarty_tpl->tpl_vars['row']->value['parent'];?>
+,'<?php echo $_smarty_tpl->tpl_vars['row']->value['comment'];?>
+','javascript:void(<?php echo $_smarty_tpl->tpl_vars['row']->value['id'];?>
+)');
+							<?php } ?>
+							$('div.modal-body').append(d.toString()).find('a[href^=javascript]').bind('click',function(){
+								if($(this).is('[id]')){
+									var id = 0,ary = $(this).attr('href').match(/\d+/g),text = $(this).text();
+									if($.isArray(ary)){
+										id = ary[0];
+									}
+									$('[data-toggle="modal"]').html(text).next().val(id);
+								}
+							});
+							//-->
+						</script>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							关闭窗口
+						</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
 		<script type="text/javascript" language="javascript">
 
 			pageSetUp();
@@ -256,71 +305,94 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			loadScript("<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
 assets/js/plugin/jquery-form/jquery-form.min.js", runFormValidation);
 
-
-			// Registration validation script
 			function runFormValidation() {
-				
+				pg.validate('form');
 			}
 
 			window.index = 0;
-			// window.fields = [];
-			// function get_fields_json(){
-			// 	$('article:last').find('div.row').each(function(){
-			// 		var me = this,field  = {};
-			// 		$(me).find('[name]').each(function(){
-			// 			var key = $(this).attr('name');
-			// 			field[key] = $(this).val();
-			// 		});
-			// 		window.fields.push(field);
-			// 	});
-			// }
-			// function regieter_event(){
-			// 	$('.validate').each(function(){
-			// 		var me = this,rules = {},messages = {};
-			// 		$(me).find('[data-rules]').each(function(){
-			// 			if(!$(this).is('event')){
-			// 				var key = $(this).attr('name');
-			// 				var _rules = $(this).data('rules');
-			// 				var _messages = $(this).data('messages');
-			// 				rules[key] = eval('('+_rules+')');
-			// 				messages[key] = eval('('+_messages+')');
-			// 			}
-			// 		}).addClass('event');
-			// 		$(me).validate({
-			// 			rules:rules,
-			// 			messages:messages,
-			// 			errorPlacement : function(error, element) {
-			// 				error.insertAfter(element.parent());
-			// 			}
-			// 		});
-			// 	});
-			// }
+			window.data = {};
+
 			$(function(){
-				$('article').first().find('button').bind('click',function(){
-					var me = this;
-					if($(me).closest('form').valid()){
-						$('article').first().hide(300);
-						$('article').last().show(500);
+				$('#next').bind('click',function(){
+					var me = this,container = $(me).closest('article');
+					if(container.find('form').valid()){
+						container.find('[name]').each(function(){
+							var key = $(this).attr('name');
+							if($(this).attr('type') === 'checkbox'){
+								window.data[key] = $(this).is(':checked') ? 1 : 0;
+							}else{
+								window.data[key] = $(this).val();
+							}
+						});
+						container.hide(300).next().show(500);
 					}
 				});
-				$('article').last().find('button:first').bind('click',function(){
-					var row = $('article').last().find('div.row:first').clone();
+				$('#add').bind('click',function(){
+					var me = this,row = $(me).closest('article').find('div.row:first').clone();
 					row.find('[name]').each(function(){
 						var name = $(this).attr('name') + window.index;
 						$(this).attr('name',name).removeClass('ignore');
 					});
-					$('article').last().find('div.row:last').after(row.show());
+					$(me).closest('article').find('div.row:last').after(row.show());
 					window.index++;
 					pg.validate('form');
 				}).trigger('click');
-				$('article').last().find('button:last').bind('click',function(){
-					$('article').last().hide(300);
-					$('article').first().show(500);
+				$('#prev').bind('click',function(){
+					var me = this;
+					$(me).closest('article').hide(300).prev().show(500);
 				});
 				$('#save').bind('click',function(){
-					var me = this;
-					if($(me).closest('form').valid()){
-
+					var me = this,container = $(me).closest('form');
+					if(container.valid()){
+						window.data.fields = [];
+						$(me).attr('disabled',true);
+						container.find('div.row').each(function(){
+							var count = 0,field = {};
+							$(this).find('[name]').each(function(){
+								if(!$(this).is('.ignore')){
+									var key = $(this).attr('name').replace(/\d+/g,'');
+									field[key] = $(this).val();
+								}
+							});
+							for(i in field){
+								count++;
+							}
+							if(count !== 0){
+								window.data.fields.push(field);
+							}
+						});
+						setTimeout(function(){
+							$.ajax({
+								url: '<?php echo $_smarty_tpl->tpl_vars['app']->value['host']['url'];?>
+admin/model/save',
+								type: 'POST',
+								dataType: 'json',
+								data: window.data,
+								error:function(){
+									$(me).attr('disabled',false);
+								},
+								success:function(json){
+									var opt = {
+										title:pg[json.module][json.status],
+										timeout:4000
+									};
+									if(json.status[0] == 2){
+										opt.color = '#dfb56c';
+										opt.iconSmall = 'fa fa-warning bounce animated';
+									}else{
+										opt.content = "<i class='fa fa-clock-o'></i> <i>2 秒后跳转页面...</i>";
+									}
+									pg.box(opt);
+									if(json.status[0] == 1){
+										setTimeout(function(){
+											window.location = '<?php echo $_smarty_tpl->tpl_vars['app']->value['host']['url'];?>
+admin#'+json.jump;
+										},opt.timeout);
+									}
+									$(me).attr('disabled',false);
+								}
+							});
+						});
 					}
 				});
 			});
