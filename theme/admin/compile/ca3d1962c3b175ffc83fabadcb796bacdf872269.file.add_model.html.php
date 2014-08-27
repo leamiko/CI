@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-08-26 09:58:09
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-27 18:12:40
          compiled from "D:\Users\xkc\Downloads\PHPnow-1.5.6.4237493736\htdocs\CI\theme\admin\template\ajax\add_model.html" */ ?>
 <?php /*%%SmartyHeaderCode:965053fc2b0cca6b22-35352570%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ca3d1962c3b175ffc83fabadcb796bacdf872269' => 
     array (
       0 => 'D:\\Users\\xkc\\Downloads\\PHPnow-1.5.6.4237493736\\htdocs\\CI\\theme\\admin\\template\\ajax\\add_model.html',
-      1 => 1409047088,
+      1 => 1409134359,
       2 => 'file',
     ),
   ),
@@ -19,6 +19,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_53fc2b0cca8b64_20573212',
   'variables' => 
   array (
+    'array' => 0,
+    'row' => 0,
     'app' => 0,
   ),
   'has_nocache_code' => false,
@@ -71,54 +73,47 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 					<!-- widget content -->
 					<div class="widget-body">
-
-						<form class="form-horizontal" novalidate="novalidate">
+						
+						<form class="smart-form" novalidate="novalidate">
 							
 							<fieldset>
-								<div class="form-group">
-									<label class="col-md-2 control-label">状态</label>
-									<div class="col-md-10">
-										<label class="checkbox-inline">
-											  <input type="checkbox" name="status" class="checkbox" checked="checked" value="0">
-											  <span>自动安装</span>
-										</label>
+								<section>
+									<label class="input">
+										  <input type="checkbox" name="status" class="checkbox" checked="checked">
+										  <span>自动安装</span>
+									</label>
+								</section>
+								<section>
+									<div class="btn-group">
+										<a class="btn btn-default" data-target="#myModal" data-toggle="modal">
+											顶级节点
+										</a>
+										<input type="hidden" name="parent" value="0">
 									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-md-2 control-label">父节点</label>
-									<div class="col-md-10">
-										<select name="parent" class="form-control">
-											<option value="0">顶级节点</option>
-										</select>
+									<div class="note">
+										<strong>父节点</strong> 用于关联表,顶级节点不关联任何表
 									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-md-2 control-label">表名</label>
-									<div class="col-md-10">
-										<input class="form-control" name="table" placeholder="以英文命名" type="text">
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-md-2 control-label">描述</label>
-									<div class="col-md-10">
-										<input class="form-control" name="comment" placeholder="以中文命名" type="text">
-									</div>
-								</div>
+								</section>
+								<section>
+									<label class="input">
+										  <input data-rules="{required:true}" name="table" placeholder="表名:英文命名" type="text">
+									</label>
+								</section>
+								<section>
+									<label class="input">
+										  <input data-rules="{required:true}" name="comment" placeholder="描述:中文命名" type="text">
+									</label>
+								</section>
 							</fieldset>
 							
-							<div class="form-actions">
-								<div class="row">
-									<div class="col-md-12">
-										<button class="btn btn-default" type="button">
-											<i class="fa fa-mail-forward"></i>
-											下一步
-										</button>
-									</div>
-								</div>
-							</div>
-
+							<footer>
+								<button class="btn btn-default" id="next" type="button">
+									<i class="fa fa-mail-forward"></i>
+									下一步
+								</button>
+							</footer>
 						</form>
-
+						
 					</div>
 					<!-- end widget content -->
 
@@ -167,20 +162,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 					<!-- widget content -->
 					<div class="widget-body no-padding">
-
-						<form action="" class="smart-form" novalidate="novalidate">
-							<footer>
-								<button class="btn btn-default" type="button">
-									<i class="fa fa-copy"></i>
-									新增字段
-								</button>
-							</footer>
+						
+						<form action="" class="smart-form validate" novalidate="novalidate">
 							<fieldset>
 								<section>
-									<div class="row">
+									<div class="row" style="display:none;">
 										<section class="col col-3">
 											<label class="input">
-												<input type="text" data-field="name" placeholder="字段名称">
+												<input type="text" name="field_name" class="ignore" data-rules="{required:true}" placeholder="字段名称">
 												<b class="tooltip tooltip-top-left">
 													<i class="fa fa-warning txt-color-teal"></i> 
 													名称不重复且以英文命名</b> 
@@ -188,7 +177,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 										</section>
 										<section class="col col-3">
 											<label class="input">
-												<input type="text" data-field="comment" placeholder="字段描述">
+												<input type="text" name="field_comment" class="ignore" data-rules="{required:true}" placeholder="字段描述">
 												<b class="tooltip tooltip-top-left">
 													<i class="fa fa-warning txt-color-teal"></i> 
 													字段描述且以中文命名</b> 
@@ -196,7 +185,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 										</section>
 										<section class="col col-2">
 											<label class="select">
-												<select class="input-sm" name="type">
+												<select name="field_type" class="ignore">
 													<option value="int(11)">INT</option>
 													<option value="varchar(500)">VARCHAR</option>
 													<option value="text">TEXT</option>
@@ -205,7 +194,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 										</section>
 										<section class="col col-2">
 											<label class="input">
-												<input type="text" data-field="default" placeholder="默认值">
+												<input type="text" name="field_default"  class="ignore" placeholder="默认值">
 												<b class="tooltip tooltip-top-left">
 													<i class="fa fa-warning txt-color-teal"></i> 
 													字段默认值</b> 
@@ -213,7 +202,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 										</section>
 										<section class="col col-2">
 											<label class="select">
-												<select class="input-sm" name="type">
+												<select name="field_ui" class="ignore">
 													<option value="text">文本框</option>
 													<option value="textarea">多行文本框</option>
 													<option value="radio">单选</option>
@@ -235,17 +224,21 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 							</fieldset>
 
 							<footer>
-								<button class="btn btn-primary" type="submit">
+								<button class="btn btn-primary" id="save" type="button">
 									<i class="fa fa-save"></i>
 									保存设置
 								</button>
-								<button class="btn btn-default" type="button">
+								<button class="btn btn-default" id="prev" type="button">
 									<i class="fa fa-mail-reply"></i>
 									上一步
 								</button>
+								<button class="btn btn-default" id="add" type="button">
+									<i class="fa fa-copy"></i>
+									新增字段
+								</button>
 							</footer>
 						</form>
-
+						
 					</div>
 					<!-- end widget content -->
 
@@ -256,60 +249,147 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<!-- end widget -->
 
 		</article>
-
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title" id="myModalLabel">节点选择</h4>
+					</div>
+					<div class="modal-body">
+						<script type="text/javascript">
+							<!--
+							var d = new dTree('d');
+							d.add(0,-1,'顶级节点','javascript:void(0)');
+							<?php  $_smarty_tpl->tpl_vars['row'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['row']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['array']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['row']->key => $_smarty_tpl->tpl_vars['row']->value) {
+$_smarty_tpl->tpl_vars['row']->_loop = true;
+?>
+							d.add(<?php echo $_smarty_tpl->tpl_vars['row']->value['id'];?>
+,<?php echo $_smarty_tpl->tpl_vars['row']->value['parent'];?>
+,'<?php echo $_smarty_tpl->tpl_vars['row']->value['comment'];?>
+','javascript:void(<?php echo $_smarty_tpl->tpl_vars['row']->value['id'];?>
+)');
+							<?php } ?>
+							$('div.modal-body').append(d.toString()).find('a[href^=javascript]').bind('click',function(){
+								if($(this).is('[id]')){
+									var id = 0,ary = $(this).attr('href').match(/\d+/g),text = $(this).text();
+									if($.isArray(ary)){
+										id = ary[0];
+									}
+									$('[data-toggle="modal"]').html(text).next().val(id);
+								}
+							});
+							//-->
+						</script>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							关闭窗口
+						</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
 		<script type="text/javascript" language="javascript">
+
 			pageSetUp();
 
 			loadScript("<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
 assets/js/plugin/jquery-form/jquery-form.min.js", runFormValidation);
 
-			// Registration validation script
 			function runFormValidation() {
-				
-
-				var $checkoutForm = $('article').first().find('form').validate({
-				// Rules for form validation
-					rules : {
-						table : {
-							required : true
-						},
-						comment : {
-							required : true
-						}
-					},
-			
-					// Messages for form validation
-					messages : {
-						table : {
-							required : '您还没有填写表的名称'
-						},
-						comment : {
-							required : '您还没有填写表的描述'
-						}
-					},
-			
-					// Do not change code below
-					errorPlacement : function(error, element) {
-						error.insertAfter(element.parent());
-					}
-				});
+				pg.validate('form');
 			}
-						
+
+			window.index = 0;
+			window.data = {};
+
 			$(function(){
-				var article = $('article');
-				article.first().find('button').bind('click',function(){
-					if($('article').first().find('form').valid()){
-						article.first().hide(300);
-						article.last().show(500);
+				$('#next').bind('click',function(){
+					var me = this,container = $(me).closest('article');
+					if(container.find('form').valid()){
+						container.find('[name]').each(function(){
+							var key = $(this).attr('name');
+							if($(this).attr('type') === 'checkbox'){
+								window.data[key] = $(this).is(':checked') ? 1 : 0;
+							}else{
+								window.data[key] = $(this).val();
+							}
+						});
+						container.hide(300).next().show(500);
 					}
 				});
-				article.last().find('button:first').bind('click',function(){
-					var row = article.last().find('div.row:first').clone();
-					article.last().find('div.row:last').after(row);
+				$('#add').bind('click',function(){
+					var me = this,row = $(me).closest('article').find('div.row:first').clone();
+					row.find('[name]').each(function(){
+						var name = $(this).attr('name') + window.index;
+						$(this).attr('name',name).removeClass('ignore');
+					});
+					$(me).closest('article').find('div.row:last').after(row.show());
+					window.index++;
+					pg.validate('form');
+				}).trigger('click');
+				$('#prev').bind('click',function(){
+					var me = this;
+					$(me).closest('article').hide(300).prev().show(500);
 				});
-				article.last().find('button:last').bind('click',function(){
-					article.last().hide(300);
-					article.first().show(500);
+				$('#save').bind('click',function(){
+					var me = this,container = $(me).closest('form');
+					if(container.valid()){
+						window.data.fields = [];
+						$(me).attr('disabled',true);
+						container.find('div.row').each(function(){
+							var count = 0,field = {};
+							$(this).find('[name]').each(function(){
+								if(!$(this).is('.ignore')){
+									var key = $(this).attr('name').replace(/\d+/g,'');
+									field[key] = $(this).val();
+								}
+							});
+							for(i in field){
+								count++;
+							}
+							if(count !== 0){
+								window.data.fields.push(field);
+							}
+						});
+						setTimeout(function(){
+							$.ajax({
+								url: '<?php echo $_smarty_tpl->tpl_vars['app']->value['host']['url'];?>
+admin/model/save',
+								type: 'POST',
+								dataType: 'json',
+								data: window.data,
+								error:function(){
+									$(me).attr('disabled',false);
+								},
+								success:function(json){
+									var opt = {
+										title:pg[json.module][json.status],
+										timeout:4000
+									};
+									if(json.status[0] == 2){
+										opt.color = '#dfb56c';
+										opt.iconSmall = 'fa fa-warning bounce animated';
+									}else{
+										opt.content = "<i class='fa fa-clock-o'></i> <i>2 秒后跳转页面...</i>";
+									}
+									pg.box(opt);
+									if(json.status[0] == 1){
+										setTimeout(function(){
+											window.location = json.jump;
+										},opt.timeout);
+									}
+									$(me).attr('disabled',false);
+								}
+							});
+						});
+					}
 				});
 			});
 		</script><?php }} ?>

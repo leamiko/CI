@@ -1,5 +1,5 @@
 <?php 
-	abstract class My_Controller extends CI_Controller{
+	abstract class PG_Controller extends CI_Controller{
 		function __construct(){
 			parent::__construct();
 			session_start();
@@ -31,14 +31,14 @@
 			return $app;
 		}
 	}
-	abstract class Index_Controller extends My_Controller{
+	abstract class Index_Controller extends PG_Controller{
 		function __construct(){
 			parent::__construct();
 			$app = $this->smarty_initialize('default');
 			$this->smarty->assign('app',$app);
 		}
 	}
-	abstract class Admin_Controller extends My_Controller{
+	abstract class Admin_Controller extends PG_Controller{
 		function __construct(){
 			parent::__construct();
 			$app = $this->smarty_initialize('admin');

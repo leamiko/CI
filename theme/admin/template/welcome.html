@@ -28,7 +28,7 @@
 
 		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
 		<link rel="stylesheet" type="text/css" media="screen" href="{$app.theme.url}assets/css/demo.min.css">
-
+		<link rel="stylesheet" type="text/css" media="screen" href="{$app.theme.url}assets/js/plugin/dtree/dtree.css">
 		<!-- #FAVICONS -->
 		<link rel="shortcut icon" href="{$app.theme.url}assets/img/favicon/favicon.ico" type="image/x-icon">
 		<link rel="icon" href="{$app.theme.url}assets/img/favicon/favicon.ico" type="image/x-icon">
@@ -716,10 +716,14 @@
 		<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
 		<script src="{$app.theme.url}assets/js/libs/jquery-2.0.2.min.js"></script>
 		<script src="{$app.theme.url}assets/js/libs/jquery-ui-1.10.3.min.js"></script>
-
-
+		
 		<!-- IMPORTANT: APP CONFIG -->
 		<script src="{$app.theme.url}assets/js/app.config.js"></script>
+
+		<script type="text/javascript">
+			$.dtree_path = "{$app.theme.url}assets/js/plugin/dtree/";
+			$.sound_path = "{$app.theme.url}assets/sound/";
+		</script>
 
 		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
 		<script src="{$app.theme.url}assets/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> 
@@ -756,6 +760,8 @@
 
 		<!-- FastClick: For mobile devices: you can disable this in app.js -->
 		<script src="{$app.theme.url}assets/js/plugin/fastclick/fastclick.min.js"></script>
+
+		<script src="{$app.theme.url}assets/js/plugin/dtree/dtree.js"></script>
 
 		<!--[if IE 8]>
 			<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>

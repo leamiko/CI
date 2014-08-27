@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-08-26 03:38:03
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-27 17:06:10
          compiled from "D:\Users\xkc\Downloads\PHPnow-1.5.6.4237493736\htdocs\CI\theme\admin\template\welcome.html" */ ?>
 <?php /*%%SmartyHeaderCode:54253f8055486a8d4-78216699%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '61e17de09275910e85141bda753e4ef4a77d57c7' => 
     array (
       0 => 'D:\\Users\\xkc\\Downloads\\PHPnow-1.5.6.4237493736\\htdocs\\CI\\theme\\admin\\template\\welcome.html',
-      1 => 1408929412,
+      1 => 1409130369,
       2 => 'file',
     ),
   ),
@@ -60,7 +60,8 @@ assets/css/your_style.css"> -->
 		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
 		<link rel="stylesheet" type="text/css" media="screen" href="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
 assets/css/demo.min.css">
-
+		<link rel="stylesheet" type="text/css" media="screen" href="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/js/plugin/dtree/dtree.css">
 		<!-- #FAVICONS -->
 		<link rel="shortcut icon" href="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
 assets/img/favicon/favicon.ico" type="image/x-icon">
@@ -775,11 +776,17 @@ assets/js/plugin/pace/pace.min.js"></script>-->
 assets/js/libs/jquery-2.0.2.min.js"></script>
 		<script src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
 assets/js/libs/jquery-ui-1.10.3.min.js"></script>
-
-
+		
 		<!-- IMPORTANT: APP CONFIG -->
 		<script src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
 assets/js/app.config.js"></script>
+
+		<script type="text/javascript">
+			$.dtree_path = "<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/js/plugin/dtree/";
+			$.sound_path = "<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/sound/";
+		</script>
 
 		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
 		<script src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
@@ -829,10 +836,14 @@ assets/js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
 		<script src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
 assets/js/plugin/fastclick/fastclick.min.js"></script>
 
+		<script src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/js/plugin/dtree/dtree.js"></script>
+
 		<!--[if IE 8]>
 			<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
 		<![endif]-->
-
+		<script src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
+assets/js/pg.js"></script>
 		<!-- Demo purpose only -->
 		<script src="<?php echo $_smarty_tpl->tpl_vars['app']->value['theme']['url'];?>
 assets/js/demo.min.js"></script>

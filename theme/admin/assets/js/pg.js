@@ -38,6 +38,25 @@ var pg;
 					});
 				}
 			});
+		},
+		box:function(opt){
+			var _opt = {
+				title : "James Simmons liked your comment",
+				content : "<i class='fa fa-clock-o'></i> <i>2 秒后关闭提示...</i>",
+				color : "#296191",
+				iconSmall : "fa fa-thumbs-up bounce animated",
+				timeout : 4000
+			}
+			var settings = $.extend(_opt, opt);
+			$.smallBox(settings);
+		},
+		model:{
+			10001:'模型更新成功',
+			10002:'模型创建成功',
+			20000:'请求失败',
+			20001:'模型更新失败',
+			20002:'模型创建失败',
+			20003:'您输入的表名已存在'
 		}
 	};
 })();
