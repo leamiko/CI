@@ -21,6 +21,7 @@ jQuery.extend(jQuery.validator.messages, {
 var pg;
 (function(){
 	pg = {
+		ele:{},
 		validate:function(e){
 			//注册所有表单验证事件
 			$(e).each(function(){
@@ -41,7 +42,7 @@ var pg;
 		},
 		box:function(opt){
 			var _opt = {
-				title : "James Simmons liked your comment",
+				title : "未知错误",
 				content : "<i class='fa fa-clock-o'></i> <i>2 秒后关闭提示...</i>",
 				color : "#296191",
 				iconSmall : "fa fa-thumbs-up bounce animated",
@@ -49,6 +50,36 @@ var pg;
 			}
 			var settings = $.extend(_opt, opt);
 			$.smallBox(settings);
+		},
+		alert:function(opt){
+			var _opt = {
+				id:'myModal',
+				title : "警告",
+				content : "<h1>未知错误</h1>",
+				modal : 'show',
+				buttons : {}
+			}
+			var settings = $.extend(_opt, opt);
+			var me = this,modal;
+			if($('#'+settings.id).size() === 0){
+				var tmp = $('#myModal').clone();
+					tmp.attr('id',settings.id);
+				$(document.body).append(tmp);
+			}
+			modal = $('#'+settings.id);
+			if(!me[settings.id]){
+				modal.find('#myModalLabel').append(settings.title);
+				modal.find('div.modal-body').append(settings.content);
+				for(i in settings.buttons){
+					var tmp = $('<button type="button" class="btn btn-default"></button>');
+					tmp.attr('id',i).html(settings.buttons[i].html);
+					if(settings.buttons[i].event && settings.buttons[i].callback){
+						tmp.bind(settings.buttons[i].event,settings.buttons[i].callback);
+					}
+					modal.find('div.modal-footer').append(tmp);
+				}
+			}
+			me[settings.id] = modal.modal(settings.modal);
 		},
 		model:{
 			10001:'模型更新成功',

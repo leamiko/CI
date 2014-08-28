@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-08-27 17:06:10
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-28 15:14:10
          compiled from "D:\Users\xkc\Downloads\PHPnow-1.5.6.4237493736\htdocs\CI\theme\admin\template\welcome.html" */ ?>
 <?php /*%%SmartyHeaderCode:54253f8055486a8d4-78216699%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '61e17de09275910e85141bda753e4ef4a77d57c7' => 
     array (
       0 => 'D:\\Users\\xkc\\Downloads\\PHPnow-1.5.6.4237493736\\htdocs\\CI\\theme\\admin\\template\\welcome.html',
-      1 => 1409130369,
+      1 => 1409210049,
       2 => 'file',
     ),
   ),
@@ -674,7 +674,23 @@ admin/panel" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span clas
 			</div>
 			
 			<!-- END #MAIN CONTENT -->
-
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								&times;
+							</button>
+							<h4 class="modal-title" id="myModalLabel"></h4>
+						</div>
+						<div class="modal-body">
+						</div>
+						<div class="modal-footer">
+						</div>
+					</div><!-- /.modal-content -->
+				</div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
 		</div>
 		<!-- END #MAIN PANEL -->
 
