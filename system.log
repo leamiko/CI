@@ -3,19 +3,43 @@ PGCMS
 模型系统
 	表 model
 		id				主键
-		comment			描述
+		comment			注释
 		table 			表名
-		fields			字段/*array(array(
-							'name'=>'字段名称',
-							'comment'=>'描述',
-							'type'=>'类型',
-							'default'=>'默认值',
-							'ui'=>'select||input||textarea.',
-							'item'=>array(array('key'=>'value'),array...) >> serialize序列化
-							),array...) >> serialize序列化*/
 		parent			父节点
 		status			状态/*安装||卸载=>1||0*/
 		time			创建时间
+		模型字段
+			表 	fields
+				id 				主键
+				name 			名称
+				type			类型
+				length			长度
+				comment			注释
+				type			类型
+				default			默认值
+				model_id		模型ID
+				form_id			表单类型
+				validate		验证
+
+		表单类型
+			表 	form
+				id 				主键
+				name 			名称
+				type			类型
+				tpl_id			模型ID
+				ds_id			数据源ID
+		数据源
+			表 	ds
+				id 				主键
+				name 			名称
+				code 			代码
+		模板
+			表 	tpl
+				id 				主键
+				name 			名称
+				comment			注释
+				code 			代码
+				
 		栏目
 			表	menu
 				id				主键
