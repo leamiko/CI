@@ -8,7 +8,8 @@ class Model extends Admin_Controller {
 		$this->smarty->display('ajax/model.html');
 	}
 	public function add(){
-		$array = $this->db->select('id,comment,parent')->get('model')->result_array();
+		$array['form'] = $this->db->get('form')->result_array();
+		$array['model'] = $this->db->select('id,comment,parent')->get('model')->result_array();
 		$this->smarty->assign('array',$array);
 		$this->smarty->display('ajax/add_model.html');
 	}

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-08-28 17:37:20
+<?php /* Smarty version Smarty-3.1.19, created on 2014-08-29 11:47:41
          compiled from "D:\Users\xkc\Downloads\PHPnow-1.5.6.4237493736\htdocs\CI\theme\admin\template\ajax\add_model.html" */ ?>
 <?php /*%%SmartyHeaderCode:965053fc2b0cca6b22-35352570%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ca3d1962c3b175ffc83fabadcb796bacdf872269' => 
     array (
       0 => 'D:\\Users\\xkc\\Downloads\\PHPnow-1.5.6.4237493736\\htdocs\\CI\\theme\\admin\\template\\ajax\\add_model.html',
-      1 => 1409218636,
+      1 => 1409284059,
       2 => 'file',
     ),
   ),
@@ -256,6 +256,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<!-- end widget -->
 
 		</article>
+		<script type="text/plain" id="model_tree">
+
+		</script>
 		<script type="text/plain" id="field_settings">
 			
 			<form class="smart-form" novalidate="novalidate">
@@ -555,6 +558,8 @@ assets/js/plugin/jquery-form/jquery-form.min.js", runFormValidation);
 								window.data.fields.push(field);
 							}
 						});
+						console.log(window.data);
+						return;
 						setTimeout(function(){
 							$.ajax({
 								url: '<?php echo $_smarty_tpl->tpl_vars['app']->value['host']['url'];?>
