@@ -57,20 +57,6 @@
 									</label>
 								</section>
 								<section>
-									<div class="btn-group">
-										<a class="btn btn-default disabled">
-											所属
-										</a>
-										<a class="btn btn-default">
-											主表
-										</a>
-										<input type="hidden" name="parent" value="0">
-									</div>
-									<div class="note">
-										<strong>所属</strong> 用于关联表,默认主表不关联任何表
-									</div>
-								</section>
-								<section>
 									<label class="input">
 										  <input data-rules="{required:true}" name="table" placeholder="表名" type="text">
 									</label>
@@ -80,144 +66,41 @@
 										  <input data-rules="{required:true}" name="comment" placeholder="注释" type="text">
 									</label>
 								</section>
-							</fieldset>
-							
-							<footer>
-								<button class="btn btn-default" id="next" type="button">
-									<i class="fa fa-mail-forward"></i>
-									下一步
-								</button>
-							</footer>
-						</form>
-						{/literal}
-					</div>
-					<!-- end widget content -->
-
-				</div>
-				<!-- end widget div -->
-
-			</div>
-			<!-- end widget -->
-
-		</article>
-
-
-		<!-- NEW COL START -->
-		<article><!--  style="display:none;" -->
-
-			<!-- Widget ID (each widget will need unique ID)-->
-			<div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-custombutton="false">
-				<!-- widget options:
-				usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-
-				data-widget-colorbutton="false"
-				data-widget-editbutton="false"
-				data-widget-togglebutton="false"
-				data-widget-deletebutton="false"
-				data-widget-fullscreenbutton="false"
-				data-widget-custombutton="false"
-				data-widget-collapsed="true"
-				data-widget-sortable="false"
-
-				-->
-				<header>
-					<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-					<h2>字段信息</h2>
-
-				</header>
-
-				<!-- widget div-->
-				<div>
-
-					<!-- widget edit box -->
-					<div class="jarviswidget-editbox">
-						<!-- This area used as dropdown edit box -->
-
-					</div>
-					<!-- end widget edit box -->
-
-					<!-- widget content -->
-					<div class="widget-body no-padding">
-						{literal}
-						<form action="" class="smart-form validate" novalidate="novalidate">
-							<fieldset>
 								<section>
-									<div class="row" style="display:none;">
-										<section class="col col-2">
-											<label class="input">
-												<input type="text" name="field_name" class="ignore" data-rules="{required:true}" placeholder="名称">
-												<b class="tooltip tooltip-top-left">
-													<i class="fa fa-warning txt-color-teal"></i> 
-													名称不重复且以英文命名</b> 
-											</label>
-										</section>
-										<section class="col col-2">
-											<label class="input">
-												<input type="text" name="field_comment" class="ignore" data-rules="{required:true}" placeholder="注释">
-												<b class="tooltip tooltip-top-left">
-													<i class="fa fa-warning txt-color-teal"></i> 
-													字段描述且以中文命名</b> 
-											</label>
-										</section>
-										<section class="col col-2">
-											<label class="select">
-												<select name="field_type" class="ignore">
-													<option value="int(11)">INT</option>
-													<option value="varchar(500)">VARCHAR</option>
-													<option value="text">TEXT</option>
-													<option value="datetime">DATE</option>
-												</select> <i></i> </label>
-										</section>
-										<section class="col col-2">
-											<label class="input">
-												<input type="text" name="field_default"  class="ignore" placeholder="默认值">
-												<b class="tooltip tooltip-top-left">
-													<i class="fa fa-warning txt-color-teal"></i> 
-													字段默认值</b> 
-											</label>
-										</section>
-										<section class="col col-2">
-											<label class="select">
-												<select name="field_ui" class="ignore">
-													<option value="text">文本框</option>
-													<option value="textarea">多行文本框</option>
-													<option value="radio">单选</option>
-													<option value="checkbox">多选</option>
-													<option value="select">下拉框</option>
-													<option value="hidden">隐藏域</option>
-													<option value="upload-picture">上传图片</option>
-													<option value="upload-attachment">上传附件</option>
-													<option value="editor">编辑器</option>
-													<option value="time">时间选择</option>
-												</select> <i></i> </label>
-										</section>
-										<section class="col col-2">
-											<button class="btn btn-default" type="button">
-												<i class="fa fa-cog"></i>
-												高级
-											</button>
-										</section>
+									<div class="btn-group">
+										<a class="btn btn-default disabled">
+											所属
+										</a>
+										<a class="btn btn-default">
+											主表
+										</a>
+										<input type="hidden" name="parent" value="0">
+									</div>
+									<div class="btn-group">
+										<button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+											字段集合 <span class="caret"></span>
+										</button>
+										<ul class="dropdown-menu">
+											<li>
+												<a href="javascript:void(0);" id="add">新建字段</a>
+											</li>
+											<li class="divider"></li>
+											<li>
+												<a href="javascript:void(0);">Something else here</a>
+											</li>
+										</ul>
 									</div>
 									<div class="note">
-										<strong>提示：</strong> 单选、多选、下拉框 类型需要设置相应项,多个字段请点击底部&lt;&lt;新增字段&gt;&gt;按钮
+										<strong>所属</strong> 用于关联表,默认主表不关联任何表
 									</div>
 								</section>
-							
 							</fieldset>
-
+							
 							<footer>
 								<button class="btn btn-primary" id="save" type="button">
 									<i class="fa fa-save"></i>
 									保存设置
 								</button>
-								<button class="btn btn-default" id="prev" type="button">
-									<i class="fa fa-mail-reply"></i>
-									上一步
-								</button>
-								<button class="btn btn-default" id="add" type="button">
-									<i class="fa fa-copy"></i>
-									新增字段
-								</button>
 							</footer>
 						</form>
 						{/literal}
@@ -231,31 +114,30 @@
 			<!-- end widget -->
 
 		</article>
-		<script type="text/plain" id="model_tree">
 
-		</script>
+		<script type="text/plain" id="model_tree"></script>
 		<script type="text/plain" id="field_settings">
 			{literal}
 			<form class="smart-form" novalidate="novalidate">
 				<fieldset>
+					<div class="row">
+						<section class="col col-6">
+							<label class="label">名称</label>
+							<label class="input">
+								  <input data-rules="{required:true}" name="name" type="text">
+							</label>
+						</section>
+						<section class="col col-6">
+							<label class="label">注释</label>
+							<label class="input">
+								  <input data-rules="{required:true}" name="comment" type="text">
+							</label>
+						</section>
+					</div>
 					<section>
-						<label class="input">
-							  <input data-rules="{required:true}" name="name" placeholder="名称" type="text">
-						</label>
-					</section>
-					<section>
-						<label class="input">
-							  <input data-rules="{required:true}" name="length" placeholder="长度" type="text">
-						</label>
-					</section>
-					<section>
-						<label class="input">
-							  <input data-rules="{required:true}" name="comment" placeholder="注释" type="text">
-						</label>
-					</section>
-					<section>
+						<label class="label">类型</label>
 						<label class="select">
-							<select class="column_type" name="field_type[0]" id="field_0_2">
+							<select class="column_type" name="type">
 								<option title="4比特的整数，有符号的表示范围是-2147483648到2147483647,无符号的表示范围是0到4294967295。">
 									INT
 								</option>
@@ -411,29 +293,43 @@
 										GEOMETRYCOLLECTION
 									</option>
 								</optgroup>
-							</select>
+							</select><i></i>
 						</label>
 					</section>
-					<section>
-						<label class="input">
-							  <input data-rules="{required:true}" name="default" placeholder="默认值" type="text">
-						</label>
-					</section>
-					<section>
-						<label class="select">
-							<select name="form_id">
-								<option>表单类型ID</option>
-							</select>
-						</label>
-					</section>
-					<section>
-						<label class="select select-multiple">
-							<select name="validate" multiple="" class="custom-scroll">
-								<option value="email">不为空</option>
-								<option value="email">邮件</option>
-							</select>
-						</label>
-					</section>
+					<div class="row">
+						<section class="col col-6">
+							<label class="label">长度</label>
+							<label class="input">
+								  <input data-rules="{required:true}" name="length" type="text">
+							</label>
+						</section>
+						<section class="col col-6">
+							<label class="label">默认值</label>
+							<label class="input">
+								  <input data-rules="{required:true}" name="default" type="text">
+							</label>
+						</section>
+					</div>
+					<div class="row">
+						<section class="col col-6">
+							<label class="label">表单类型</label>
+							<label class="select">
+								<select name="form_id">
+									<option>表单类型ID</option>
+								</select><i></i>
+							</label>
+						</section>
+						<section class="col col-6">
+							<label class="label">验证方式</label>
+							<label class="select">
+								<select name="validate" class="custom-scroll">
+									<option value="email">默认</option>
+									<option value="email">必填</option>
+									<option value="email">邮件</option>
+								</select><i></i>
+							</label>
+						</section>
+					</div>
 				</fieldset>
 			</form>
 			{/literal}
@@ -471,43 +367,69 @@
 					}
 				});
 				$('#add').bind('click',function(){
-					var me = this,row = $(me).closest('article').find('div.row:first').clone();
-					row.find('[name]').each(function(){
-						var name = $(this).attr('name') + window.index;
-						$(this).attr('name',name).removeClass('ignore');
-					});
-					row.find('[type="button"]:first').bind('click',function(){
-						pg.alert({
-							id:'fieldModal',
-							title:'字段高级设置',
-							content:$('#field_settings').html(),
-							modal:'toggle',
-							buttons:{
-								back:{
-									html:'<i class="fa fa-mail-reply"></i> 返回',
-									event:'click',
-									callback:function(){
-										$(this).closest('[role="dialog"]').modal('hide');
-									}
-								},
-								submit:{
-									html:'<i class="fa fa-save"></i> 保存设置',
-									event:'click',
-									callback:function(){
-										pg.validate('form');
-										var me = this,container = $(me).closest('[role="dialog"]').find('form');
-										if(container.valid()){
-											alert('验证通过');
-										}
+					pg.alert({
+						id:'fieldModal',
+						title:'字段高级设置',
+						content:$('#field_settings').html(),
+						modal:'toggle',
+						buttons:{
+							back:{
+								html:'<i class="fa fa-mail-reply"></i> 返回',
+								event:'click',
+								callback:function(){
+									$(this).closest('[role="dialog"]').modal('hide');
+								}
+							},
+							submit:{
+								html:'<i class="fa fa-save"></i> 保存设置',
+								event:'click',
+								callback:function(){
+									pg.validate('form');
+									var me = this,container = $(me).closest('[role="dialog"]').find('form');
+									if(container.valid()){
+										alert('验证通过');
 									}
 								}
 							}
-						});
+						}
 					});
-					$(me).closest('article').find('div.row:last').after(row.show());
-					window.index++;
-					pg.validate('form');
-				}).trigger('click');
+					// var me = this,row = $(me).closest('article').find('div.row:first').clone();
+					// row.find('[name]').each(function(){
+					// 	var name = $(this).attr('name') + window.index;
+					// 	$(this).attr('name',name).removeClass('ignore');
+					// });
+					// row.find('[type="button"]:first').bind('click',function(){
+					// 	pg.alert({
+					// 		id:'fieldModal',
+					// 		title:'字段高级设置',
+					// 		content:$('#field_settings').html(),
+					// 		modal:'toggle',
+					// 		buttons:{
+					// 			back:{
+					// 				html:'<i class="fa fa-mail-reply"></i> 返回',
+					// 				event:'click',
+					// 				callback:function(){
+					// 					$(this).closest('[role="dialog"]').modal('hide');
+					// 				}
+					// 			},
+					// 			submit:{
+					// 				html:'<i class="fa fa-save"></i> 保存设置',
+					// 				event:'click',
+					// 				callback:function(){
+					// 					pg.validate('form');
+					// 					var me = this,container = $(me).closest('[role="dialog"]').find('form');
+					// 					if(container.valid()){
+					// 						alert('验证通过');
+					// 					}
+					// 				}
+					// 			}
+					// 		}
+					// 	});
+					// });
+					// $(me).closest('article').find('div.row:last').after(row.show());
+					// window.index++;
+					// pg.validate('form');
+				});
 				$('#prev').bind('click',function(){
 					var me = this;
 					$(me).closest('article').hide(300).prev().show(500);
@@ -516,7 +438,6 @@
 					var me = this,container = $(me).closest('form');
 					if(container.valid()){
 						window.data.fields = [];
-						$(me).attr('disabled',true);
 						container.find('div.row').each(function(){
 							var count = 0,field = {};
 							$(this).find('[name]').each(function(){
@@ -532,6 +453,12 @@
 								window.data.fields.push(field);
 							}
 						});
+						if(window.data.fields.length === 0){
+							return $('#add').trigger('click');
+						}
+						$(me).attr('disabled',true);
+						console.log(window.data.fields.length);
+						return;
 						setTimeout(function(){
 							$.ajax({
 								url: '{$app.host.url}admin/model/save',
